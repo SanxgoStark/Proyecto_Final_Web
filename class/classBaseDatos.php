@@ -57,7 +57,7 @@ class BaseDatos{
 
 // funcion apara desplegar una tabla dinamica
 // $iconos indican acciones que se pueden hacer en la tabla
-function desplegarTabla($query,$anchtable=array(),$iconos=array(),$coLoTabla="table-primary"){
+function desplegarTabla($query,$anchtable=array(),$iconos=array(),$coLoTabla="table-hover"){
 
 	//global $oBD;
 
@@ -69,7 +69,7 @@ function desplegarTabla($query,$anchtable=array(),$iconos=array(),$coLoTabla="ta
 
 
 	// creacion de la cabecera
-	$result.= '<tr class="table-dark">'; // con el .= se concatena con el result anterior
+	$result.= '<tr class="table-primary">'; // con el .= se concatena con el result anterior
 
 	// if (count($anchtable)){
 	// 	foreach ($anchtable as $anch) {
@@ -92,7 +92,7 @@ $k = 0;
 				<form method="post">
 				
 				<input type="hidden" name="accion" value="formNew" />
-				<input type="image" src="../imagenes/add.png"></form>
+				<input type="image" src="../img/add.png"></form>
 
 				</td>';	
 			}
@@ -120,7 +120,7 @@ $k = 0;
 	// fin cabecera
 	// comienzo de registros
 	for ($r=0; $r < $this->numeRegistros; $r++) 
-	{ $result.= '<tr>';
+	{ $result.= '<tr class="">';
 		$campos = mysqli_fetch_array($registros); // regresa un arreglo doble
 		// agregando iconos
 		// EN EL CASO DE QUE "UPDATE EXISTA EN EL ARRGLO DE LOS ICONOS"
@@ -128,17 +128,17 @@ $k = 0;
 			//da comportamiento de los iconos
 			//$result.= '<td style="width:5%"><img src="../imagenes/update.png"></td>';
 			$result.= '<td style="width:5%"><form method="post" action="">
-			<input type="hidden" name="Id" value="'.$campos['Id'].'" />
+			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />
 			<input type="hidden" name="accion" value="formUpdate" />
-			<input type="image" src="../imagenes/update.png"></form></td>';
+			<input type="image" src="../img/update.png"></form></td>';
 		}
 
 		if (in_array("delete", $iconos)) {
 			//da comportamiento de los iconos
 			$result.= '<td style="width:5%"><form method="post" action="">
-			<input type="hidden" name="Id" value="'.$campos['Id'].'" />
+			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />
 			<input type="hidden" name="accion" value="delete" />
-			<input type="image" src="../imagenes/delete.png"></form></td>';
+			<input type="image" src="../img/delete.png"></form></td>';
 		}
 
 		// Opciones de icono (addPregunta)
@@ -146,9 +146,9 @@ $k = 0;
 		if (in_array("addPreg", $iconos)) {
 			//da comportamiento de los iconos
 			$result.= '<td style="width:5%"><form method="post" action="pregunta.php">
-			<input type="hidden" name="Id" value="'.$campos['Id'].'" />
+			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />
 			<input type="hidden" name="accion" value="list" />
-			<input type="image" src="../imagenes/addPreg.png"></form></td>';
+			<input type="image" src="../img/addPreg.png"></form></td>';
 		}
 
 		// Opciones de icono (view)
@@ -156,18 +156,18 @@ $k = 0;
 		if (in_array("vista", $iconos)) {
 			//da comportamiento de los iconos
 			$result.= '<td style="width:5%"><form method="post" action="preview.php">
-			<input type="hidden" name="Id" value="'.$campos['Id'].'" />
+			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />
 			<input type="hidden" name="accion" value="preview" />
-			<input type="image" src="../imagenes/view.png"></form></td>';
+			<input type="image" src="../img/view.png"></form></td>';
 		}
 
 		if (in_array("pru", $iconos)) {
 			//da comportamiento de los iconos
 			$result.= '<td style="width:5%"><form method="post" action="preview.php">
-			<input type="hidden" name="Id" value="'.$campos['Id'].'" />
+			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />
 			<input type="hidden" name="accion" value="preview" />
 
-			<input type="image" src="../imagenes/view.png"></form></td>';
+			<input type="image" src="../img/view.png"></form></td>';
 
 		switch ($campos['Tipo']) {
 
