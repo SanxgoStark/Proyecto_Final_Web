@@ -1,0 +1,11 @@
+.paralelogramo {
+     width: 150px; 
+     height: 100px; 
+     border: 3px solid #555; 
+     background: #428bca;
+     -webkit-transform: skew(20deg);
+     -moz-transform: skew(20deg);
+     -ms-transform: skew(20deg);
+     -o-transform: skew(20deg);
+     transform: skew(20deg);
+}

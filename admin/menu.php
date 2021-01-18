@@ -16,14 +16,23 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
+
+    	<div style="margin-right: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item active">
-        <a class="nav-link" href="home.php">Home
+        <a class="nav-link" href="home.php">
+        	<img src="../img/home.png"><br>Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
+       </div>
+
+       <div style="margin-right: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="g_empleados.php">G.Empleados</a>
+        <a class="nav-link" href="g_empleados.php">G.Empleados
+        </a>
       </li>
+  	   </div>
+
       <li class="nav-item">
         <a class="nav-link" href="g_productos.php">G.Productos</a>
       </li>

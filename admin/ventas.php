@@ -1,6 +1,11 @@
-<?php ?>
+<?php
 
-<!DOCTYPE html>
+	include "header.php"; // cabecera con enlaces hacia css
+	// HEADER.PHP CONTIENE EL SESSION START POR ESO SE COLOCA PRIMERO EN INCLUDE
+   include "menu.php";
+
+?>
+
 <html>
 <head>
 	<title></title>
