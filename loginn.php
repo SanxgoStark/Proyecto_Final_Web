@@ -86,9 +86,9 @@
 </nav>
 
 <!-- contenedor -->
-<div class="container" style="background: rgba( 78, 25, 102,0.7);justify-content: center;width: 500px;">
+<div class="container" style=";justify-content: center;width: 500px;">
   <div class="row renglon">
-    <div style=";position: absolute;" class="col-md-5">
+    <div style="background: rgba( 255, 255, 255,0.9);position: absolute;border-radius: 20px" class="col-md-5">
       <!--  -->
 <form action="validar.php" method="post">
   <fieldset>
