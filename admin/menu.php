@@ -17,37 +17,41 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
 
-    	<div align="center" style=" margin-right: 10px;background: rgb(20, 188, 87)">
+    	<div align="center" style=" margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item active">
-      	<img src="../img/home.png">
-        <a style="" class="nav-link" href="home.php">Home
+      	
+        <a style="" class="nav-link" href="home.php">
+        	<img src="../img/homen.png"><br>Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
        </div>
 
-       <div align="center" style="margin-right: 10px;border-radius: 90px;background: rgb(20, 188, 87)">
+       <div align="center" style="margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="g_empleados.php"><img src="../img/employe.png">G.Empleados
+        <a class="nav-link" href="g_empleados.php"><img src="../img/employe.png"><br>G.Empleados
         </a>
       </li>
   	   </div>
 
-  	   <div align="center" style="margin-right: 10px;border-radius: 90px;background: rgb(20, 188, 87)">
+  	   <div align="center" style="margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="g_productos.php"><img src="../img/employe.png">G.Productos</a>
+        <a class="nav-link" href="g_productos.php"><img src="../img/product.png"><br>G.Productos
+        <span class="sr-only">(current)</span></a>
       </li>
   	   </div>
 
-  	   <div align="center" style="margin-right: 10px;border-radius: 90px;background: rgb(20, 188, 87)">
+  	   <div align="center" style="margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="ventas.php"><img src="../img/employe.png">Ventas</a>
+        <a class="nav-link" href="ventas.php"><img src="../img/hsales.png"><br>Ventas
+        <span class="sr-only">(current)</span></a>
       </li>
   	   </div>
 
-  	   <div align="center" style="margin-right: 10px;border-radius: 90px;background: rgb(20, 188, 87)">
+  	   <div align="center" style="margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="nueva_venta.php"><img src="../img/employe.png">Nueva Venta</a>
+        <a class="nav-link" href="nueva_venta.php"><img src="../img/sales.png"><br>Nueva Venta
+        <span class="sr-only">(current)</span></a>
       </div>
     </ul>
     

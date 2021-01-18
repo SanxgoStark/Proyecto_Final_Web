@@ -51,7 +51,7 @@
 	.renglon{margin-top: 65px;}
 </style>
 
-<div style="position: absolute;width: 100%;height: 100%; align-content: center;">
+<div style="position: absolute;width: 100%;height: 100%; align-content: center; background-image: url(img/fondo.png"); >
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a style="font-family: sans-serif;font-size: 25px" class="navbar-brand" href="">PexSales</a>
