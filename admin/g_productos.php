@@ -13,15 +13,24 @@ include "menu.php";
 include "../class/classBaseDatos.php";
 //var_dump($_POST);
 
+$query = "SELECT P.pk_id_prod,nomb_prod as Producto,nomb_prov as Proveedor,cantidad_prod as Cantidad,unidad_prod as Unidad,precio_prod as Precio from producto P join proveedor PR on P.fk_id_prov = PR.pk_id_prov";
+
+
+// SELECT * FROM Tabla1 INNER JOIN Tabla2
+// ON Tabla1.identificador = Tabla2.identificador;
+
 echo'<div style="text-align: center;width: 100%"><h1 style="">Gestion Productos</h1></div><br>';
 
 // si es enviado el post en la ccion
 if (isset($_POST['accion'])) {
+
+	// echo $_POST['accion'] ;
 	// si fue enviado entonces puedo realizar una serie de acciones
 	switch ($_POST['accion']) {
 
 		case 'delete':
-			$oBD->consulta("DELETE from producto where pk_id_prod=".$_POST['Id']);
+
+			$oBD->consulta("DELETE from producto where pk_id_prod=".$_POST['pk_id_prod']);
 			// de mi objeto de la base de datos yo quiero desplegar la tabla
 			echo $oBD->desplegarTabla("SELECT * from producto",array(),array("update","delete"));
 			//echo "borrando";
@@ -33,27 +42,51 @@ if (isset($_POST['accion'])) {
 
 			echo '<div class="container">
 
-				<h3>Editar Tipo de encuesta</h3>
+				<h3>Editar Producto</h3>
 
 				<form method="post">
 
 				<!--si existe un id de resgitros-->
 				<input type="hidden" name="accion" value="'.(isset($registro->pk_id_prod)?"update":"insert").'" />
 
-				<!-- Se toma el registro que recuperamos -->
-				<input type="hidden" name="Id" value="'.$registro->pk_id_prod.'" />
-
 				<div class="row">
-					<label class="col-md-4">Tipo</label>
-					<div class="col-md-8"><input type="text" class="form-control" name="Tipo" value="'.(isset($registro->pk_id_prod)?$registro->Tipo:"").'"/></div>
+					<label class="col-md-4">Nombre</label>
+					<div class="col-md-8"><input type="text" class="form-control" name="nomb_prod" value="'.(isset($registro->pk_id_prod)?$registro->nomb_prod:"").'"/></div>
 				</div>
 
 				<div class="row">
+					<label class="col-md-4">Unidad</label>
+					<div class="col-md-8"><input type="text" class="form-control" name="unidad_prod" value="'.(isset($registro->pk_id_prod)?$registro->unidad_prod:"").'"/></div>
+				</div>
+
+				<div class="row">
+					<label class="col-md-4">Contenido</label>
+					<div class="col-md-8"><input type="text" class="form-control" name="cantidad_prod" value="'.(isset($registro->pk_id_prod)?$registro->cantidad_prod:"").'"/></div>
+				</div>
+
+				<div class="row">
+					<label class="col-md-4">Precio</label>
+					<div class="col-md-8"><input type="text" class="form-control" name="precio_prod" value="'.(isset($registro->pk_id_prod)?$registro->precio_prod:"").'"/></div>
+				</div>
+
+				<!-- Se toma el registro que recuperamos -->
+				<input type="hidden" name="pk_id_prod" value="'.$registro->pk_id_prod.'" />
+
+				<div class="row">
+					<label class="col-md-4">Proveedor</label>
+					<div class="col-md-8">';
+
+
+			echo $oBD->creaSelect("proveedor","pk_id_prov","nomb_prov","fk_id_prov",isset($registro->pk_id_prod)?$registro->fk_id_prov:-1);
+
+
+			echo '</div>
+			<div class="row">
 					
-					<div class="col-md-8"><button type="submit">Actualizar</button></div>
+					<div class="col-md-8"><input type="submit"/></div>
 				</div>
 				</form>
-			</div>';
+				</div>';
 
 		// como no hay break de cierre al ejecutar el caso FormUpdate se ejecuta el caso formUpdate
 
@@ -64,7 +97,7 @@ if (isset($_POST['accion'])) {
 
 			echo '<div class="container">
 
-				<h3>Nuevo Tipo de encuesta</h3>
+				<h3 style="text-align:">Nuevo Producto</h3>
 
 				<form method="post">
 
@@ -73,50 +106,77 @@ if (isset($_POST['accion'])) {
 
 
 				<div class="row">
-					<label class="col-md-4">Tipo</label>
-					<div class="col-md-8"><input type="text" class="form-control" name="Tipo" value="'.(isset($registro->pk_id_prod)?$registro->Tipo:"").'"/></div>
+					<label class="col-md-4">Nombre</label>
+					<div class="col-md-8"><input type="text" class="form-control" name="nomb_prod" value="'.(isset($registro->pk_id_prod)?$registro->nomb_prod:"").'"/></div>
+				</div>
+
+				<div class="row">
+					<label class="col-md-4">Unidad</label>
+					<div class="col-md-8"><input type="text" class="form-control" name="unidad_prod" value="'.(isset($registro->pk_id_prod)?$registro->unidad_prod:"").'"/></div>
+				</div>
+
+				<div class="row">
+					<label class="col-md-4">Contenido</label>
+					<div class="col-md-8"><input type="text" class="form-control" name="cantidad_prod" value="'.(isset($registro->pk_id_prod)?$registro->cantidad_prod:"").'"/></div>
+				</div>
+
+				<div class="row">
+					<label class="col-md-4">Precio</label>
+					<div class="col-md-8"><input type="text" class="form-control" name="precio_prod" value="'.(isset($registro->pk_id_prod)?$registro->precio_prod:"").'"/></div>
 				</div>
 
 
 				<div class="row">
+					<label class="col-md-4">Proveedor</label>
+					<div class="col-md-8">';
+
+
+			echo $oBD->creaSelect("proveedor","pk_id_prov","nomb_prov","fk_id_prov",isset($registro->pk_id_prod)?$registro->fk_id_prov:-1);
+
+
+			echo '</div>
+			<div class="row">
 					
 					<div class="col-md-8"><input type="submit"/></div>
 				</div>
 				</form>
-			</div>';
+				</div>';
 
 			break;
 
 		case 'update':
 			// echo "update";
-			 $query="UPDATE producto SET ";
+			 $queryu="UPDATE producto SET ";
 			foreach ($_POST as $nombCampo => $valor) 
 				// con esto estamos eliminando informacion que no se necesita en la conulta
-				if(!in_array($nombCampo,array("accion","Id")))
-				$query.=$nombCampo."='".$valor."', ";
+				if(!in_array($nombCampo,array("accion","pk_id_prod")))
+				$queryu.=$nombCampo."='".$valor."', ";
 			// se retira la ultima coma de la consulta
-			$query= substr($query,0,-2);
+			$queryu= substr($queryu,0,-2);
 			// id que estamos enviando del registro
-			$query.=" where pk_id_prod=".$_POST['Id'];
+			$queryu.=" where pk_id_prod=".$_POST['pk_id_prod'];
+
+			echo $queryu;
 			// ejecucion de query
-		   $oBD->consulta($query);
+		   $oBD->consulta($queryu);
 			// impresion del query que se esta ejecutando
 			// echo $query;
-		   echo $oBD->desplegarTabla("SELECT * from producto",array(),array("update","delete"));
+		   echo $oBD->desplegarTabla($query,array(),array("update","delete"));
+
 			break;
 
 		case 'insert':
-			$query="INSERT INTO producto SET ";
+			$queryi="INSERT INTO producto SET ";
 			foreach ($_POST as $nombCampo => $valor) 
 				if(!in_array($nombCampo,array("accion")))
-				$query.=$nombCampo."='".$valor."', ";
+				$queryi.=$nombCampo."='".$valor."', ";
 			// se retira la ultima coma de la consulta
-			$query= substr($query,0,-2);
+			$queryi= substr($queryi,0,-2);
 			// ejecucion de query
-		   $oBD->consulta($query);
+		   $oBD->consulta($queryi);
 			// impresion del query que se esta ejecutando
 			// echo $query;
-		   echo $oBD->desplegarTabla("SELECT * from producto",array(),array("update","delete"));
+		   echo $oBD->desplegarTabla($query,array(),array("update","delete"));
 			
 			break;
 		default:
@@ -124,7 +184,8 @@ if (isset($_POST['accion'])) {
 			break;
 	}
 }else{
-	echo $oBD->desplegarTabla("SELECT * from producto",array(),array("update","delete"));
+	echo $oBD->desplegarTabla($query,array(),array("update","delete"));
+	// echo $query;
 }
 
 ?>

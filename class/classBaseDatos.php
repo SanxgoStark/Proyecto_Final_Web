@@ -124,19 +124,36 @@ $k = 0;
 		$campos = mysqli_fetch_array($registros); // regresa un arreglo doble
 		// agregando iconos
 		// EN EL CASO DE QUE "UPDATE EXISTA EN EL ARRGLO DE LOS ICONOS"
+
 		if (in_array("update", $iconos)) {
+
 			//da comportamiento de los iconos
 			//$result.= '<td style="width:5%"><img src="../imagenes/update.png"></td>';
+
 			$result.= '<td style="width:5%"><form method="post" action="">
-			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />
+
+			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />	
+			<input type="hidden" name="pk_id_emp" value="'.$campos['pk_id_emp'].'" />
+
 			<input type="hidden" name="accion" value="formUpdate" />
 			<input type="image" src="../img/update.png"></form></td>';
+		}
+
+		if (in_array("detalle", $iconos)) {
+			//da comportamiento de los iconos
+			//$result.= '<td style="width:5%"><img src="../imagenes/update.png"></td>';
+			$result.= '<td style="width:5%"><form method="post" action="d_venta.php">
+			
+			<input type="hidden" name="pk_id_vent" value="'.$campos['pk_id_vent'].'" />
+			<input type="hidden" name="accion" value="detalleV" />
+			<input type="image" src="../img/dv.png"></form></td>';
 		}
 
 		if (in_array("delete", $iconos)) {
 			//da comportamiento de los iconos
 			$result.= '<td style="width:5%"><form method="post" action="">
 			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />
+			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_emp'].'" />
 			<input type="hidden" name="accion" value="delete" />
 			<input type="image" src="../img/delete.png"></form></td>';
 		}
@@ -147,6 +164,7 @@ $k = 0;
 			//da comportamiento de los iconos
 			$result.= '<td style="width:5%"><form method="post" action="pregunta.php">
 			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />
+			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_emp'].'" />
 			<input type="hidden" name="accion" value="list" />
 			<input type="image" src="../img/addPreg.png"></form></td>';
 		}
@@ -157,6 +175,7 @@ $k = 0;
 			//da comportamiento de los iconos
 			$result.= '<td style="width:5%"><form method="post" action="preview.php">
 			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_prod'].'" />
+			<input type="hidden" name="pk_id_prod" value="'.$campos['pk_id_emp'].'" />
 			<input type="hidden" name="accion" value="preview" />
 			<input type="image" src="../img/view.png"></form></td>';
 		}

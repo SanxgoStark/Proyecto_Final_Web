@@ -21,7 +21,7 @@
       <li class="nav-item active">
       	
         <a style="" class="nav-link" href="home.php">
-        	<img src="../img/homen.png"><br>Home
+        	<img src="../img/h.png"><br>Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
@@ -29,28 +29,28 @@
 
        <div align="center" style="margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="g_empleados.php"><img src="../img/employe.png"><br>G.Empleados
+        <a class="nav-link" href="g_empleados.php"><img src="../img/ge.png"><br>G.Empleados
         </a>
       </li>
   	   </div>
 
   	   <div align="center" style="margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="g_productos.php"><img src="../img/product.png"><br>G.Productos
+        <a class="nav-link" href="g_productos.php"><img src="../img/p.png"><br>G.Productos
         <span class="sr-only">(current)</span></a>
       </li>
   	   </div>
 
   	   <div align="center" style="margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="ventas.php"><img src="../img/hsales.png"><br>Ventas
+        <a class="nav-link" href="ventas.php"><img src="../img/s.png"><br>Ventas
         <span class="sr-only">(current)</span></a>
       </li>
   	   </div>
 
   	   <div align="center" style="margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="nueva_venta.php"><img src="../img/sales.png"><br>Nueva Venta
+        <a class="nav-link" href="nueva_venta.php"><img src="../img/cr.png"><br>Nueva Venta
         <span class="sr-only">(current)</span></a>
       </div>
     </ul>
