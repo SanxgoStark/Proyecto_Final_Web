@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<div style="max-width: 100%">
+<div style="width: 100%">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a style="font-family: sans-serif;font-size: 25px" class="navbar-brand" href="">PexSales</a>

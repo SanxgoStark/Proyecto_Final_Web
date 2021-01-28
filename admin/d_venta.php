@@ -6,12 +6,12 @@
    include "../class/classBaseDatos.php";
 
    echo '<h1 style="text-align: center">Detalle venta</h1>
-		 <p style="text-align: center" class="text-success">'.$_POST['pk_id_vent'].'</p>
+		 <p style="text-align: center" class="text-success">'.$_POST['Id'].'</p>
    ';
 
-   $idV = $_POST['pk_id_vent'];
+   $idV = $_POST['Id'];
 
-   $query = "SELECT nomb_prod as Producto,precio_prod as Precio,cantidad as Cantidad FROM venta_detalle VD join producto P on VD.fk_id_prod = P.pk_id_prod WHERE fk_id_vent =".$idV;
+   $query = "SELECT nomb_prod as Producto,precio_prod as Precio,cantidad as Cantidad FROM venta_detalle VD join producto P on VD.fk_id_prod = P.Id WHERE VD.Id =".$idV;
 
    // $query = "SELECT * FROM venta_detalle WHERE fk_id_vent =".$idV;
 
