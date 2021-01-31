@@ -9,8 +9,7 @@ include "../class/classBaseDatos.php";
 
 
 
-$query = "SELECT E.Id,CONCAT(nomb_emp,' ',apepat_emp,' ',apemat_emp)as Empleado,direccion_emp as Direccion,nss_emp as NSS,fechanac_emp as Nacimiento,telnum_emp as Telefono,nomb_usua as Usuario,
-    clave_cancelv as Clv_X,nomb_rol as Rol FROM empleado E
+$query = "SELECT E.Id,CONCAT(nomb_emp,' ',apepat_emp,' ',apemat_emp)as Empleado,direccion_emp as Direccion,nss_emp as NSS,fechanac_emp as Nacimiento,telnum_emp as Telefono,nomb_usua as Usuario,nomb_rol as Rol FROM empleado E
     join usuario_emp U ON E.Id = U.Id join usuario US ON U.fk_id_usua = US.Id join rol R ON US.fk_id_rol = R.Id";
 
 // SELECT * FROM Tabla1 INNER JOIN Tabla2

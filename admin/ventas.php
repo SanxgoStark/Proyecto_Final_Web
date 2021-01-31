@@ -5,6 +5,7 @@ include "menu.php";
 include "../class/classBaseDatos.php";
 //var_dump($_POST);
 
+
 $query = "SELECT V.Id,fecha,CONCAT(nomb_emp,' ',apepat_emp,' ',apemat_emp)as empleado FROM venta V join empleado E on V.fk_id_emp = E.Id";
 
 // echo $query;
@@ -27,6 +28,7 @@ if (isset($_POST['accion'])) {
 			break;
 		}
 	}else{
+		
 		echo $oBD->desplegarTabla($query,array(),array("detalle"));
 	}
 

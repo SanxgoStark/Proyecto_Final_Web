@@ -60,7 +60,7 @@
 <!-- esto es un comentario de prueba para github -->
 
 </nav>
-
+<div style="text-align: center;width: 100%"><h1 style="">Home Vendedor</h1></div><br>
 </body>
 </html>
 

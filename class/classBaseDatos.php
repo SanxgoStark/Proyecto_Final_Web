@@ -43,6 +43,14 @@ class BaseDatos{
 			return $bloque;
 		}
 
+// FUNCION ECHA POR MI
+	function consult(){
+		$this->conecta();
+		$total = mysqli_query($this->conexion,"SELECT SUM(precio_prod) FROM producto");
+
+		return $total;
+	}
+
 	// funcion que obtienen un registro	(esta funcion trae especificamente un registro)
 	function saca_tupla($query){
 			$this->conecta(); // se abre conexion
@@ -65,9 +73,9 @@ function desplegarTabla($query,$anchtable=array(),$iconos=array(),$coLoTabla="ta
 
 	//menciona cuantos regisros contiene
 	$columnas = mysqli_num_fields($registros);
-	$result = '<div class="container"><table class= "table table-hover'.$coLoTabla.'">';
+	$result = '<div class="container"><table style="" id="regTable" class= "table table-hover'.$coLoTabla.'">';
 
-
+	
 	// creacion de la cabecera
 	$result.= '<tr class="table-primary">'; // con el .= se concatena con el result anterior
 
@@ -143,6 +151,26 @@ $k = 0;
 			<input type="hidden" name="Id" value="'.$campos['Id'].'" />
 			<input type="hidden" name="accion" value="detalleV" />
 			<input type="image" src="../img/dv.png"></form></td>';
+		}
+
+		if (in_array("addp", $iconos)) {
+			//da comportamiento de los iconos
+			//$result.= '<td style="width:5%"><img src="../imagenes/update.png"></td>';
+			$result.= '<td style="width:5%"><form method="post" action="">
+
+			<input type="hidden" name="Id" value="'.$campos['Id'].'" />
+			<input type="hidden" name="accion" value="addp" />
+			<input id="addproduct" type="image" src="../img/addp.png"></form></td>';
+		}
+
+		if (in_array("delp", $iconos)) {
+			//da comportamiento de los iconos
+			//$result.= '<td style="width:5%"><img src="../imagenes/update.png"></td>';
+			$result.= '<td style="width:5%"><form method="post" action="nueva_venta.php">
+
+			<input type="hidden" name="Id" value="'.$campos['Id'].'" />
+			<input type="hidden" name="accion" value="delp" />
+			<input type="image" src="../img/delete.png"></form></td>';
 		}
 
 		if (in_array("delete", $iconos)) {

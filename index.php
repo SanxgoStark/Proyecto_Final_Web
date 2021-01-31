@@ -11,7 +11,7 @@
 <head>
 	<title>Pexsales</title>
 	<link rel="stylesheet" href="css/bootstrapnew.css">
-	<link rel="stylesheet" href="css/carrusel.css">
+	<!-- <link rel="stylesheet" href="css/carrusel.css"> -->
   <!-- <link rel="stylesheet" type="text/css" href="css/micss.css"> -->
 </head>
 

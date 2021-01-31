@@ -37,7 +37,7 @@ if (isset($_POST['accion'])) {
 			break;
 
 		case 'formUpdate': $registro=$oBD->saca_tupla("SELECT * FROM producto where Id=".$_POST['Id']);
-
+			echo $_POST['Id'];
 			// echo "formNew";
 
 			echo '<div class="container">

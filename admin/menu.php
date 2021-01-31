@@ -1,4 +1,6 @@
 <?php
+	
+
 
 ?>
 
@@ -50,7 +52,7 @@
 
   	   <div align="center" style="margin-right: 10px;border-radius: 10px;background: rgb(20, 188, 87)">
       <li class="nav-item">
-        <a class="nav-link" href="nueva_venta.php"><img src="../img/cr.png"><br>Nueva Venta
+        <a onclick="creaVentaDb();" class="nav-link" href="nueva_venta.php"><img  src="../img/cr.png"><br>Nueva Venta
         <span class="sr-only">(current)</span></a>
       </div>
     </ul>
@@ -70,6 +72,15 @@
 </nav>
   <!--<a href="../login.php?=correcto">Cerrar Sesion</a>-->
 
+<script type="text/javascript">
+	
 
+function creaVentaDb() {
+
+
+}
+
+
+</script>
 
 
